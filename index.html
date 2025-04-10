@@ -1,13 +1,18 @@
-<script>
-fetch("https://visio-sandbox.beta.numerique.gouv.fr/api/v1.0/users/me/", {
-  method: "GET",
-  credentials: "include"
-})
-.then(response => response.json())
-.then(data => {
-  alert(JSON.stringify(data));
-})
-.catch(err => {
-  alert("Error: " + err);
-});
-</script>
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      fetch("https://visio-sandbox.beta.numerique.gouv.fr/api/v1.0/users/me/", {
+        method: "GET",
+        credentials: "include"
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert("PII: " + JSON.stringify(data));
+      })
+      .catch(err => {
+        alert("Error: " + err);
+      });
+    </script>
+  </body>
+</html>
